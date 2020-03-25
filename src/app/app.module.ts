@@ -7,9 +7,10 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ProductsComponent } from './components/products/products.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-	declarations: [AppComponent, ProductsComponent],
+	declarations: [AppComponent, ProductsComponent, HeaderComponent],
 	imports: [
 		BrowserModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
