@@ -6,9 +6,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, ProductsComponent],
 	imports: [
 		BrowserModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
