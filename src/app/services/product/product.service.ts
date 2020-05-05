@@ -11,8 +11,8 @@ export class ProductService {
 	private productCollection: AngularFirestoreCollection<Product>;
 	private _products$: Observable<ProductWithID[]>;
 
-	constructor(private readonly firebase: AngularFirestore) {
-		this.productCollection = this.firebase.collection<Product>('product');
+	constructor(private readonly angularFirestore: AngularFirestore) {
+		this.productCollection = this.angularFirestore.collection<Product>('product');
 		this._products$ = this.productCollection.snapshotChanges().pipe(
 			map((actions) =>
 				actions.map((action) => {
@@ -33,10 +33,10 @@ export class ProductService {
 	}
 
 	public deleteProduct(product: ProductWithID): void {
-		this.firebase.doc('product/' + product.id).delete();
+		this.angularFirestore.doc('product/' + product.id).delete();
 	}
 
 	public updateProduct(product: ProductWithID): void {
-		this.firebase.doc('product/' + product.id).update(product);
+		this.angularFirestore.doc('product/' + product.id).update(product);
 	}
 }
