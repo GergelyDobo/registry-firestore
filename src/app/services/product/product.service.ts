@@ -33,10 +33,10 @@ export class ProductService {
 	}
 
 	public deleteProduct(product: ProductWithID): void {
-		this.angularFirestore.doc('product/' + product.id).delete();
+		this.productCollection.doc(product.id).delete();
 	}
 
 	public updateProduct(product: ProductWithID): void {
-		this.angularFirestore.doc('product/' + product.id).update(product);
+		this.productCollection.doc(product.id).update(product);
 	}
 }
